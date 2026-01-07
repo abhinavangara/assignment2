@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    input {
+      display: block;
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 250px;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+    .success {
+      color: green;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>User Registration Form</h2>
+
+  <form onsubmit="return validateForm()">
+
+    <input type="text" id="name" placeholder="Name">
+    <span id="nameError" class="error"></span>
+
+    <input type="text" id="email" placeholder="Email">
+    <span id="emailError" class="error"></span>
+
+    <input type="password" id="password" placeholder="Password">
+    <span id="passwordError" class="error"></span>
+
+    <input type="text" id="phone" placeholder="Phone Number">
+    <span id="phoneError" class="error"></span>
+
+    <input type="date" id="dob">
+    <span id="dobError" class="error"></span>
+
+    <br>
+    <button type="submit">Submit</button>
+
+  </form>
+
+  <script>
+    function validateForm() {
+      let isValid = true;
+
+      // Clear previous errors
+      document.querySelectorAll(".error").forEach(e => e.textContent = "");
+
+      // Name validation (at least 3 alphabets, no numbers or special chars)
+      const name = document.getElementById("name").value.trim();
+      const nameRegex = /^[A-Za-z]{3,}$/;
+      if (!nameRegex.test(name)) {
+        document.getElementById("nameError").textContent =
+          "Name must be at least 3 alphabets and contain no numbers or special characters.";
+        isValid = false;
+      }
+
+      // Email validation
+      const email = document.getElementById("email").value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById("emailError").textContent =
+          "Enter a valid email address (username@domain.extension).";
+        isValid = false;
+      }
+
+      // Password validation
+      const password = document.getElementById("password").value;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      if (!passwordRegex.test(password)) {
+        document.getElementById("passwordError").textContent =
+          "Password must be at least 8 characters and include uppercase, lowercase, number, and special character.";
+        isValid = false;
+      }
+
+      // Phone number validation (10 digits, numeric)
+      const phone = document.getElementById("phone").value.trim();
+      const phoneRegex = /^\d{10}$/;
+      if (!phoneRegex.test(phone)) {
+        document.getElementById("phoneError").textContent =
+          "Phone number must be exactly 10 digits.";
+        isValid = false;
+      }
+
+      // Date of Birth validation (not empty)
+      const dob = document.getElementById("dob").value;
+      if (dob === "") {
+        document.getElementById("dobError").textContent =
+          "Please select your date of birth.";
+        isValid = false;
+      }
+
+      return isValid;
+    }
+  </script>
+
+</body>
+</html>
