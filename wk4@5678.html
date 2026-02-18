@@ -1,0 +1,168 @@
+None selected
+
+Skip to content
+Using Gmail with screen readers
+Storage update
+Get 30 GB for ₹59 ₹15 for 3 months
+Storage is shared across Gmail, Drive & Photos
+13.37 GB of 15 GB used
+Conversations
+89% of 15 GB used
+Terms · Privacy · Program Policies
+Last account activity: 0 minutes ago
+Open in 1 other location · Details
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Website Layout Using Div</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        display: grid;
+        grid-template-rows: 100px 60px auto;
+        height: 100vh;
+    }
+
+    .row1 {
+        display: grid;
+        grid-template-columns: 200px auto;
+        background: #222;
+        color: white;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 2px solid #444;
+    }
+
+    .logo img {
+        width: 140px;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .header {
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .row2 {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        background: #444;
+        text-align: center;
+        align-items: center;
+    }
+
+    .row2 div {
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    .row2 div:hover {
+        background: #666;
+    }
+
+    .row3 {
+        display: grid;
+        grid-template-columns: 250px auto;
+    }
+
+    .services {
+        background: #f4f4f4;
+        padding: 15px;
+        border-right: 2px solid #ccc;
+    }
+
+    .services div {
+        margin-bottom: 10px;
+        cursor: pointer;
+        color: blue;
+    }
+
+    .services div:hover {
+        text-decoration: underline;
+    }
+
+    .content {
+        padding: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Row 1 -->
+    <div class="row1">
+        <div class="logo">
+            <img src="https://www.codewithc.com/wp-content/uploads/2014/12/online-book-store.jpg" alt="Website Logo">
+        </div>
+        <div class="header">My Website Header</div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row2">
+        <div onclick="loadContent('home')">Home</div>
+        <div onclick="loadContent('login')">Login</div>
+        <div onclick="loadContent('registration')">Registration</div>
+        <div onclick="loadContent('catalogue')">Catalogue</div>
+        <div onclick="loadContent('cart')">Cart</div>
+        <div onclick="loadContent('contact')">Contact Us</div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="row3">
+        <div class="services">
+            <h3>Services</h3>
+            <div onclick="loadContent('service1')">Web Design</div>
+            <div onclick="loadContent('service2')">SEO Optimization</div>
+            <div onclick="loadContent('service3')">Digital Marketing</div>
+            <div onclick="loadContent('service4')">Support</div>
+        </div>
+
+        <div class="content" id="contentArea">
+            <h2>Welcome</h2>
+            <p>Select a link to view the content here.</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function loadContent(page) {
+    const content = document.getElementById("contentArea");
+
+    const pages = {
+        home: "<h2>Home</h2><p>Welcome to our website homepage.</p>",
+        login: "<h2>Login</h2><p>Please enter your login credentials.</p>",
+        registration: "<h2>Registration</h2><p>Create a new account here.</p>",
+        catalogue: "<h2>Catalogue</h2><p>Browse our product catalogue.</p>",
+        cart: "<h2>Cart</h2><p>Your shopping cart is empty.</p>",
+        contact: "<h2>Contact Us</h2><p>Contact us at support@example.com.</p>",
+        service1: "<h2>Web Design</h2><p>We create responsive and modern websites.</p>",
+        service2: "<h2>SEO Optimization</h2><p>Improve your search engine rankings.</p>",
+        service3: "<h2>Digital Marketing</h2><p>Grow your business with digital marketing strategies.</p>",
+        service4: "<h2>Support</h2><p>24/7 customer support services available.</p>"
+    };
+
+    content.innerHTML = pages[page];
+}
+</script>
+
+</body>
+</html>
+WK4.HTML
+Displaying WK4.HTML.
